@@ -56,25 +56,23 @@ public class TokoBuku {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Integer> keranjang = new ArrayList<>();
         
-       
-        tampilkanDaftarBuku();
+        // Menghilangkan tampilan daftar buku
+        for (int i = 0; i < bukuNama.length; i++) {
+            System.out.println((i+1) + ". " + bukuNama[i] + " " + bukuHarga[i]);
+        }
         
-     
         while (true) {
-            System.out.print("Masukan pilihan buku [1/2/3/4]: ");
+            System.out.print("Masukan pilihan buku [1/2/3/4]:");
             int pilihanBuku = scanner.nextInt();
-            
             
             if (pilihanBuku < 1 || pilihanBuku > bukuNama.length) {
                 System.out.println("Pilihan buku tidak valid!");
                 continue;
             }
             
-         
             keranjang.add(pilihanBuku);
             
-         
-            System.out.print("Input lagi (Y/N)?: ");
+            System.out.print("Input lagi (Y/N)?:");
             String inputLagi = scanner.next();
             
             if (!inputLagi.equalsIgnoreCase("Y")) {
@@ -82,13 +80,10 @@ public class TokoBuku {
             }
         }
         
-       
         int totalHarga = hitungTotalHarga(keranjang);
         
-       
         int voucher = hitungVoucher(totalHarga);
         
-      
         System.out.println("Total voucher belanja = " + voucher);
         System.out.println("Total yang harus dibayar = " + (totalHarga - voucher));
         
