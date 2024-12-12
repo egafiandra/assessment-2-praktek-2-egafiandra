@@ -23,13 +23,10 @@ public class Nomor2 {
                 break;
             }
         }
-
         int totalHarga = hitungTotalHarga(hargaBelanja);
         int voucherBelanja = hitungVoucherBelanja(totalHarga);
-
         System.out.println("Total voucher belanja = " + voucherBelanja);
         System.out.println("Total yang harus dibayar = " + totalHarga);
-
         System.out.println(Nomor2.class.getDeclaredMethods().length); 
         input.close();
     }
@@ -41,7 +38,6 @@ public class Nomor2 {
         }
         return totalHarga;
     }
-
     public static int hitungVoucherBelanja(int totalHarga) {
         if (totalHarga < 200000) {
             return 0;
