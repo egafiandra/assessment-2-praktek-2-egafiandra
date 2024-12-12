@@ -10,23 +10,18 @@ public class TokoBuku {
         "Psychology of Money"
     };
     
-   
     private static int[] bukuHarga = {
         350000,
         450000,
         500000,
         95000
     };
-    
-    
     public static void tampilkanDaftarBuku() {
         System.out.println("Daftar Buku:");
         for (int i = 0; i < bukuNama.length; i++) {
             System.out.println((i+1) + ". " + bukuNama[i] + " " + bukuHarga[i]);
         }
     }
-    
-    
     public static int hitungTotalHarga(ArrayList<Integer> keranjang) {
         int totalHarga = 0;
         for (int indexBuku : keranjang) {
@@ -35,10 +30,8 @@ public class TokoBuku {
         return totalHarga;
     }
     
-   
     public static int hitungVoucher(int totalHarga) {
         int voucher = 0;
-        
         if (totalHarga >= 200000 && totalHarga < 500000) {
             voucher = 50000;
         } else if (totalHarga >= 500000 && totalHarga < 750000) {
@@ -81,7 +74,6 @@ public class TokoBuku {
         }
         
         int totalHarga = hitungTotalHarga(keranjang);
-        
         int voucher = hitungVoucher(totalHarga);
         
         System.out.println("Total voucher belanja = " + voucher);
